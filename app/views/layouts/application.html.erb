@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <div id="nav">
+      <% if current_user %>
+          <%= link_to "프로필수정", edit_user_path(current_user.id) %>
+          <%= link_to "로그아웃", :logout, method: :post %>
+      <% else %>
+          <%= link_to "회원가입", new_user_path %> |
+          <%= link_to "로그인", :login %>
+      <% end %>
+    </div>
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
     <%= yield %>
   </body>
 </html>
