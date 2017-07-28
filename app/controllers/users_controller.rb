@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # skip_before_action :verify_authenticity_token #postman 테스트시 csrf_token 인증 제거
   skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 

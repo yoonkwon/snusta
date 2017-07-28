@@ -1,6 +1,6 @@
 <h1>Users</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Email</th>
@@ -14,11 +14,11 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.crypted_password %></td>
-        <td><%= user.salt %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td style="word-break:break-all;"><%= user.crypted_password %></td>
+        <td style="word-break:break-all;"><%= user.salt %></td>
+        <td><%= link_to '보기', user, class: 'btn btn-info' %></td>
+        <td><%= link_to '수정', edit_user_path(user), class: 'btn btn-warning'%></td>
+        <td><%= link_to '삭제', user, method: :delete, data: { confirm: '정말 삭제합니까?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '유저 생성', new_user_path, class:'btn btn-primary' %>
