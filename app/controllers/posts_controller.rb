@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :new, :create]
+  skip_before_action :require_login, only: [:new, :create]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
