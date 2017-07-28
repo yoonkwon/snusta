@@ -9,19 +9,17 @@
   </head>
 
   <body>
-    <div id="nav">
-      <% if current_user %>
-          <%= link_to "프로필수정", edit_user_path(current_user.id) %>
-          <%= link_to "로그아웃", :logout, method: :delete %>
-      <% else %>
-          <%= link_to "회원가입", new_user_path %> |
-          <%= link_to "로그인", :login %>
-      <% end %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |name, msg| %>
+              <% alert_type = name=='alert' ? 'alert-danger': 'alert-notice'%>
+              <%= content_tag(:div, msg, class: "alert #{alert_type}") %>
+          <% end %>
+        </div>
+        <%= yield %>
+      </div>
     </div>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
-    <%= yield %>
   </body>
 </html>
