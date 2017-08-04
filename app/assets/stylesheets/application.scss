@@ -14,3 +14,23 @@
  *= require_tree .
  *= require_self
  */
+
+body body{
+  height: 100%;
+  margin: 0;
+}
+
+.field {
+  margin-bottom: 3%;
+}
+
+.signup {
+  padding-top: 17%
+}
+
+.signup-inner {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}

@@ -1,27 +1,29 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with(model: user, local: true, class: 'form-group') do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.email_field :email, class: 'form-control', placeholder: '이메일 주소'%>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.text_field :name, class: 'form-control', placeholder: '사용자이름' %>
+  </div>
+
+  <div class="field">
+    <%= form.password_field :password, class: 'form-control', placeholder: '비밀번호' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "가입" %>
   </div>
 <% end %>
