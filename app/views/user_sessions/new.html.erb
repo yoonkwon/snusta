@@ -1,6 +1,11 @@
-<h1>Login</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', user_sessions_path %>
+<div class="container signin text-center">
+  <div class="table table-bordered signin-inner">
+    <h1>SNUSTA</h1>
+    <br />
+    <%= render 'form', user: @user %>
+  </div>
+  <div class="signup-inner-bottom">
+    계정이 없으신가요? <%= link_to ' 가입하기', new_user_path %>
+  </div>
+</div>
 

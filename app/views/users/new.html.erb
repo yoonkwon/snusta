@@ -1,10 +1,17 @@
-<div class="col-12 text-center signup">
+<div class="container signup text-center">
   <div class="table table-bordered signup-inner">
     <h1>SNUSTA</h1>
+    <br />
+    <div class="signup-title">
+      <h5>
+        친구들의 사진과 동영상을 보려면 가입 하세요
+      </h5>
+    </div>
 
     <%= render 'form', user: @user %>
-
-    <%= link_to 'Back', users_path %>
+  </div>
+  <div class="signup-inner-bottom">
+    이미 계정이 있으신가요? <%= link_to ' 로그인', :login %>
   </div>
 </div>
 

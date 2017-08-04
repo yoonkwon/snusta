@@ -1,13 +1,11 @@
-<%= form_tag user_sessions_path, :method => :post do %>
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email %>
+<%= form_tag user_sessions_path, :method => :post, class: 'form-group' do %>
+    <div class="signup-field">
+      <%= text_field_tag :email, nil, class: 'form-control', placeholder: '사용자이름' %>
     </div>
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
+    <div class="signin-field">
+      <%= password_field_tag :password, nil, class: 'form-control', placeholder: '비밀번호' %>
     </div>
-    <div class="actions">
-      <%= submit_tag "Login" %>
+    <div class="actions ">
+      <%= submit_tag "로그인", class: 'btn btn-primary signin-submit' %>
     </div>
 <% end %>

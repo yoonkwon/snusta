@@ -11,19 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="signup-field">
     <%= form.email_field :email, class: 'form-control', placeholder: '이메일 주소'%>
   </div>
 
-  <div class="field">
+  <div class="signup-field">
     <%= form.text_field :name, class: 'form-control', placeholder: '사용자이름' %>
   </div>
 
-  <div class="field">
+  <div class="signup-field">
     <%= form.password_field :password, class: 'form-control', placeholder: '비밀번호' %>
   </div>
 
   <div class="actions">
-    <%= form.submit "가입" %>
+    <%= form.submit "가입", class: 'btn btn-primary signup-submit'%>
+  </div>
+
+  <div class="signup-text">
+    가입하면 SNUSTA의 약관 및 개인정보 처리방침에 동의하게 됩니다.
   </div>
 <% end %>
