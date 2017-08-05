@@ -82,3 +82,17 @@ body {
   height: 100%;
   width: 100%;
 }
+
+#error_explanation {
+  text-align: left;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#error_explanation > h2 {
+  font-size: 1rem;
+  font-weight: bold;
+}
