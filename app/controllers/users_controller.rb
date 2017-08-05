@@ -26,11 +26,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-
+    p = user_params
+    @user = User.new(p)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        # 만약 바로 로그인된 페이지로 가려면 아래 로그인 코드를 넣습니다
+        # login(p[:name], p[:password])
+        # format.html { redirect_to @user}
+
+        # 가입 직후에는 로그인 페이지로 가서 로그인 하게 한다
+        format.html { redirect_to :login}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
