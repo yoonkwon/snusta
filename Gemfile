@@ -40,6 +40,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.1'
 end
 gem 'sprockets-rails', '~> 3.2.0'
+
+gem 'rails-i18n', '~> 5.0', '>= 5.0.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
