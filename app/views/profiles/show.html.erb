@@ -1,0 +1,52 @@
+<!--프로필 헤더 부분-->
+<div class="row">
+  <div class="col-sm-2" style="border:red solid 1px">
+    <%=image_tag '이상해씨.jpg',class: 'img img-circle', style: 'border-radius:50%;width:100%'%>
+  </div>
+  <div class="col-sm-10" style="border:blue solid 1px">
+    <div class="row">
+      <strong><%=@user.name%></strong>
+      <button class="btn btn-default">프로필 편집</button>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        게시물 0
+      </div>
+      <div class="col-xs-12">
+        팔로우 0
+      </div>
+      <div class="col-xs-12">
+        팔로워 0
+      </div>
+    </div>
+    <div class="row">
+      <%=@user.name%>
+    </div>
+  </div>
+</div>
+
+<!--프로필 바디 부분-->
+<div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
+    </div>
+  </div>
+</div>

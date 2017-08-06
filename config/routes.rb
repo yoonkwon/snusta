@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'posts#index'
 
   resources :user_sessions, only: [:create,:destroy]
   resources :users
   resources :posts
+
+  resources :profiles, param: :name, only: [:show, :edit, :update]
 
   get 'login' => 'user_sessions#new', as: :login
   delete 'logout' => 'user_sessions#destroy', as: :logout
