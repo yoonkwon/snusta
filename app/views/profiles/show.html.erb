@@ -1,32 +1,29 @@
 <!--프로필 헤더 부분-->
-<div class="row">
-  <div class="col-sm-2" style="border:red solid 1px">
-    <%=image_tag '이상해씨.jpg',class: 'img img-circle', style: 'border-radius:50%;width:100%'%>
+<div class="row profile-top">
+  <div class="profile-top-left col-xs-4 col-sm-4 col-lg-4">
+  <span>
+    <%=image_tag '이상해씨.jpg',class: 'img img-circle profile-img'%>
+  </span>
   </div>
-  <div class="col-sm-10" style="border:blue solid 1px">
-    <div class="row">
-      <strong><%=@user.name%></strong>
-      <button class="btn btn-default">프로필 편집</button>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        게시물 0
-      </div>
-      <div class="col-xs-12">
+  <div class="profile-top-right col-xs-8 col-sm-8 col-lg-8">
+    <strong><%=@user.name%></strong>
+    <button class="btn btn-default"><%= link_to '프로필 편집', edit_user_url(@user) %></button>
+    <div>
+      <span class="profile-text">
+        게시물 <%= @user.posts.size %>
+      </span>
+      <span class="profile-text">
         팔로우 0
-      </div>
-      <div class="col-xs-12">
+      </span>
+      <span class="profile-text">
         팔로워 0
-      </div>
-    </div>
-    <div class="row">
-      <%=@user.name%>
+      </span>
     </div>
   </div>
 </div>
 
 <!--프로필 바디 부분-->
-<div>
+<div class="profile-body">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
       <%=image_tag '이상해씨.jpg', style: 'width:100%'%>

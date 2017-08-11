@@ -11,7 +11,7 @@
       </li>
         <% if logged_in? %>
           <li class="nav-item">
-            <%= link_to '프로필수정', edit_user_path(current_user.id), class: 'nav-link' %>
+            <%= link_to '프로필', "/profiles/#{current_user.name}", class: 'nav-link' %>
           </li>
 
           <li class="nav-item">
