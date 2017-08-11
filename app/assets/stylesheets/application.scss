@@ -111,10 +111,6 @@ body {
   min-width: 700px;
 }
 
-.profile-top-left{
-
-}
-
 .profile-text{
   margin-right: 5%;
 }
@@ -140,12 +136,17 @@ body {
 }
 
 .posting-icon{
-  padding: 0.5%;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  min-width: 45px;
+  max-width: 45px;
   width: 5%;
+  background-color: white;
 }
 
 .footer {
-  border: #999999 solid 1px;
+  border-top: #999999 solid 1px;
   background-color: white;
   height: 7%;
+  vertical-align: middle;
 }
