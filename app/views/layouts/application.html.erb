@@ -28,10 +28,13 @@
               <% end %>
           <% end %>
         </div>
-        <div class="col-12 frame c">
+        <div class="col-12 frame">
           <%= yield %>
         </div>
       </div>
     </div>
+  <% if logged_in? %>
+    <%= render 'layouts/footer' %>
+  <% end %>
   </body>
 </html>
