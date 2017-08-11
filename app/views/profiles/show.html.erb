@@ -1,13 +1,13 @@
 <!--프로필 헤더 부분-->
-<div class="row profile-top">
-  <div class="profile-top-left col-xs-4 col-sm-4 col-lg-4">
+<div class="row profile-top container">
+  <div class="profile-top-left col-xs-6 col-sm-4 col-lg-4">
   <span>
     <%=image_tag '이상해씨.jpg',class: 'img img-circle profile-img'%>
   </span>
   </div>
-  <div class="profile-top-right col-xs-8 col-sm-8 col-lg-8">
-    <strong><%=@user.name%></strong>
-    <button class="btn btn-default"><%= link_to '프로필 편집', edit_user_url(@user) %></button>
+  <div class="profile-top-right col-xs-6 col-sm-8 col-lg-8">
+    <strong class="profile-name"><%=@user.name%></strong>
+    <button class="btn btn-default profile-edit"><%= link_to '프로필 편집', edit_user_url(@user) %></button>
     <div>
       <span class="profile-text">
         게시물 <%= @user.posts.size %>
@@ -47,3 +47,11 @@
     </div>
   </div>
 </div>
+
+<div class="footer fixed-bottom text-center">
+  <span>
+    <%= image_tag 'camera.jpg', class: 'posting-icon' %>
+  </span>
+</div>
+
+

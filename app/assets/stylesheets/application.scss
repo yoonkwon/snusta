@@ -1,12 +1,6 @@
 @import "bootstrap";
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
-  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
-  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -27,6 +21,10 @@ body {
   height: 100%;
   margin: 0;
   background-color: #fafafa;
+}
+
+.header {
+  background-color: white;
 }
 
 .signup-field, .signin-field {
@@ -98,23 +96,56 @@ body {
   display: none;
 }
 
+.nav-contents {
+  padding-left: 10%;
+}
 .profile-img {
   border-radius: 50%;
-  width: 50%;
-}
-.profile-left- {
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .profile-top{
+  margin-top: 5%;
   margin-bottom: 5%;
+  min-width: 700px;
 }
 
 .profile-top-left{
+
+}
+
+.profile-text{
+  margin-right: 5%;
+}
+
+.profile-name{
+  font-size: 2rem;
+  margin-right: 3%;
+}
+
+.profile-edit{
+  background-color: white;
+  border: solid 1px #dbdbdb;
+  font-size: 1rem;
+  margin-bottom: 2%;
 }
 
 .profile-top-right{
   padding-top: 5%;
 }
+
 .profile-right {
   font-size: 1.5rem;
+}
+
+.posting-icon{
+  padding: 0.5%;
+  width: 5%;
+}
+
+.footer {
+  border: #999999 solid 1px;
+  background-color: white;
+  height: 7%;
 }
