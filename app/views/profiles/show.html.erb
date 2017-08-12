@@ -25,25 +25,10 @@
 <!--프로필 바디 부분-->
 <div class="profile-body">
   <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-      <%=image_tag '이상해씨.jpg', style: 'width:100%'%>
-    </div>
+    <% @posts.each do |post| %>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
+        <%= image_tag post.img_path.url, style: 'width:100%'%>
+      </div>
+    <% end %>
   </div>
 </div>

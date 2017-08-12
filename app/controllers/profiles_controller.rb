@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_user
 
   def show
-    # render json: @user.to_json
+    @posts = @user.posts
   end
 
   def edit
