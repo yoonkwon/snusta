@@ -2,11 +2,18 @@
   .footer > div > .col {
     padding-top: 10px;
   }
+  i.fa{
+    color: grey
+  }
   .footer div > a {
-    color: grey;
     display: inline-block; /*a tag가 전체에 꽉차도록*/
     height: 100%;
     width: 100%;
+  }
+  .footer div> span {
+    display: inline-block;
+    width:100%;
+
   }
 </style>
 
@@ -23,6 +30,11 @@
       </a>
     </div>
     <div class="col">
+      <!-- 자바스크립트까지 배워야해서 패스..-->
+      <!--<form action="<%=new_post_path%>" onclick="document.getElementById('img_path').click();">-->
+        <!--<input type="file" id="img_path" name="img_path"  accept="image/gif, image/jpeg, image/png" style="display: none;" onchange="this.form.submit()"/>-->
+        <!--<i class="fa fa-camera-retro fa-2x"></i>-->
+      <!--</form>-->
       <a href="<%=new_post_path%>">
         <i class="fa fa-camera-retro fa-2x"></i>
       </a>

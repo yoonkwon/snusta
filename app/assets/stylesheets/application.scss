@@ -18,6 +18,9 @@
  */
 
 body {
+  min-width: 400px;
+  width: auto !important;
+  position: relative;
   height: 100%;
   margin: 0;
   background-color: #fafafa;
@@ -78,7 +81,7 @@ body {
 }
 
 .frame {
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 
@@ -153,11 +156,12 @@ body {
 }
 
 .new-post {
-  padding-top: 15%;
-  width: 70%;
+  background-color: white;
+  width: 100%;
   height: 100%;
 }
 
 .post-content{
   height: 50%;
+  padding: 5px;
 }

@@ -1,3 +1,19 @@
+<style>
+  input#img-upload{
+    display:none;
+  }
+  img.img-preview {
+    width:50px;
+    height:50px;
+  }
+  .img-addon {
+    padding: 0;
+    border:none;
+  }
+</style>
+
+<% no_image_url = "https://scontent-amt2-1.cdninstagram.com/t51.2885-19/11906329_960233084022564_1448528159_a.jpg" %>
+
 <%= form_with(model: post, local: true, html: { multipart: true }, class: 'form-group') do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +27,46 @@
     </div>
   <% end %>
 
-  <div class="field post-title">
-    <%= form.label :제목 %>
-    <%= form.text_field :title, id: :post_title, class: 'form-control' %>
+
+  <div class="post-content input-group">
+    <span class="input-group-addon img-addon">
+      <!-- user profile 이미지로 대체 -->
+      <%= image_tag no_image_url, class: 'rounded-circle float-left img-preview'%>
+    </span>
+    <%= form.text_field :title, id: :post_title, class: 'form-control', placeholder:'제목입력..', style: 'border:none'%>
+    <!--이미지를 클릭하면 파일 업로드 창이 나온다-->
+    <span class="input-group-addon img-addon" onclick="document.getElementById('img-upload').click();">
+      <%= image_tag no_image_url, id:'preview', class: 'rounded float-right img-preview'%>
+    </span>
   </div>
 
-  <div class="field post-content">
-    <%= form.label :내용 %>
-    <%= form.text_field :content, id: :post_content, class: 'form-control' %>
+  <div class="post-content field">
+    <%= form.text_area :content, id: :post_content, class: 'form-control', placeholder: '문구입력..', rows: 4 %>
   </div>
 
-  <div class="field post-img">
-    <%= form.label :사진 %>
-    <%= form.file_field :img_path, class: 'form-control' %>
+  <div class="post-content field">
+    <%= form.submit '공유하기', class: 'btn btn-primary' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "등록", class: 'btn btn-primary' %>
-  </div>
+  <%= form.file_field :img_path, class: 'form-control', onchange: 'readURL(this)', id:'img-upload' %>
 <% end %>
+
+<script>
+//	window.onload = function(){
+//		document.getElementById('img-upload').click();
+//		console.log('clicked');
+//  };
+	
+	function readURL(input) {
+
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#preview').attr('src', e.target.result);
+			};
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+</script>

@@ -1,17 +1,10 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>img_path:</strong>
-  <%=image_tag @post.img_path, class: 'img' %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="col-12">
+  <%=image_tag @post.img_path, style:"width:100%;height:auto;"%>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-body"> <%= @post.title %></h4>
+      <p class="card-text"><%= @post.content %></p>
+      <p class="card-text"><small class="text-muted"><%= "#{time_ago_in_words(@post.created_at)} 전" %></small></p>
+    </div>
+  </div>
+</div>
