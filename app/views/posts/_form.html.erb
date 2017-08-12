@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true, html: { multipart: true }) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -21,8 +21,11 @@
     <%= form.text_field :content, id: :post_content %>
   </div>
 
-  <% img_paths = %w(스티치.jpg 야도란.jpg 이상해씨.jpg 토토로.jpg 파이리.jpg 페코.png 피카츄.jpg)%>
-  <%= form.hidden_field :img_path, value: img_paths[rand(img_paths.count-1)] %>
+  <div class="field">
+    <%= form.label :img_path %>
+    <%= form.file_field :img_path %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
