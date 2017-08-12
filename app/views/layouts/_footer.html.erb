@@ -1,7 +1,41 @@
+<style>
+  .footer > div > .col {
+    padding-top: 10px;
+  }
+  .footer div > a {
+    color: grey;
+    display: inline-block; /*a tag가 전체에 꽉차도록*/
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
 <div class="footer fixed-bottom text-center">
-  <span>
-    <a href="<%=new_post_path%>">
-      <i class="fa fa-camera-retro fa-3x"></i>
-    </a>
-  </span>
+  <div class="row">
+    <div class="col"> <!-- bootstrap4 div.row 클래스 아래에 div.col 클래스를 주면 동일 가중치 width로 나눔-->
+      <a href="<%=root_path%>">
+        <i class="fa fa-home fa-2x"></i>
+      </a>
+    </div>
+    <div class="col">
+      <a href="#">
+        <i class="fa fa-search fa-2x"></i>
+      </a>
+    </div>
+    <div class="col">
+      <a href="<%=new_post_path%>">
+        <i class="fa fa-camera-retro fa-2x"></i>
+      </a>
+    </div>
+    <div class="col">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x"></i>
+      </a>
+    </div>
+    <div class="col">
+      <a href="<%=profile_path(current_user.name)%>">
+        <i class="fa fa-user fa-2x"></i>
+      </a>
+    </div>
+  </div>
 </div>
