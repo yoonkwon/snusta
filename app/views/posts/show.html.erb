@@ -9,8 +9,8 @@
 </p>
 
 <p>
-  <strong>Text:</strong>
-  <%= @post.text %>
+  <strong>img_path:</strong>
+  <%=image_tag @post.img_path, class: 'img' %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
