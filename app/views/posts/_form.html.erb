@@ -21,11 +21,8 @@
     <%= form.text_field :content, id: :post_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_field :text, id: :post_text %>
-  </div>
-
+  <% img_paths = %w(스티치.jpg 야도란.jpg 이상해씨.jpg 토토로.jpg 파이리.jpg 페코.png 피카츄.jpg)%>
+  <%= form.hidden_field :img_path, value: img_paths[rand(img_paths.count-1)] %>
   <div class="actions">
     <%= form.submit %>
   </div>
