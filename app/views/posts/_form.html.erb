@@ -12,8 +12,6 @@
   }
 </style>
 
-<% no_image_url = "https://scontent-amt2-1.cdninstagram.com/t51.2885-19/11906329_960233084022564_1448528159_a.jpg" %>
-
 <%= form_with(model: post, local: true, html: { multipart: true }, class: 'form-group') do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -31,12 +29,12 @@
   <div class="post-content input-group">
     <span class="input-group-addon img-addon">
       <!-- user profile 이미지로 대체 -->
-      <%= image_tag no_image_url, class: 'rounded-circle float-left img-preview'%>
+      <%= image_tag 'user.png', class: 'rounded-circle float-left img-preview'%>
     </span>
     <%= form.text_field :title, id: :post_title, class: 'form-control', placeholder:'제목입력..', style: 'border:none'%>
     <!--이미지를 클릭하면 파일 업로드 창이 나온다-->
     <span class="input-group-addon img-addon" onclick="document.getElementById('img-upload').click();">
-      <%= image_tag no_image_url, id:'preview', class: 'rounded float-right img-preview'%>
+      <%= image_tag 'user.png', id:'preview', class: 'rounded float-right img-preview'%>
     </span>
   </div>
 
