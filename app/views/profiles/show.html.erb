@@ -26,9 +26,9 @@
 <div class="profile-body">
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-bottom: 10px;">
+      <a href="<%=post_path(post.id)%>" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-bottom: 10px;">
         <%= image_tag post.img_path, style: 'width:100%'%>
-      </div>
+      </a>
     <% end %>
   </div>
 </div>
