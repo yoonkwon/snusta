@@ -14,8 +14,7 @@
 
   <div class="post-content input-group">
     <span class="input-group-addon img-addon">
-      <% profile_img = (current_user.profile_img.nil?) ? 'user.png' : current_user.profile_img%>
-      <%= image_tag profile_img, class: 'rounded-circle float-left img-preview'%>
+      <%= image_tag current_user.valid_profile_img, class: 'rounded-circle float-left img-preview'%>
     </span>
     <%= form.text_field :title, id: :post_title, class: 'form-control', placeholder:'제목입력..', style: 'border:none'%>
     <!--이미지를 클릭하면 파일 업로드 창이 나온다-->

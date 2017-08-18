@@ -29,3 +29,28 @@ img.img-preview {
 .card-body{
   padding: 1.25rem;
 }
+
+.card-title{
+  padding: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+a.heart{
+  margin-bottom: 1.25rem;
+}
+
+.comment-table{
+  margin-bottom: 20px;
+}
+
+.commenter{
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.comment{
+  padding-left: 8px;
+  vertical-align: top;
+  word-break: break-all;
+}

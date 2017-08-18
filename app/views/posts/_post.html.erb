@@ -1,10 +1,37 @@
 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
   <div class="card">
+    <div class="card-title">
+      <span><%=image_tag current_user.valid_profile_img, class: 'img rounded-circle', style: 'width:20px;height:auto'%></span>
+      <span><%=current_user.name%></span>
+    </div>
     <%=image_tag post.img_path, class: 'card-img-top', style:'width:100%;height:auto;'%>
     <div class="card-body">
-      <h4 class="card-title"> <%= post.title %></h4>
+      <div class="card-text" style="padding-bottom:1rem">
+        <%= link_to like_post_path(post), class: 'card-text btn-heart', method: :put, remote: false do %>
+          <% if post.has_like(current_user)%>
+              <i class="fa fa-heart fa-2x" style="color:red"></i>
+          <% else %>
+              <i class="fa fa-heart-o fa-2x"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <h4 class="card-text"> <%= post.title %></h4>
       <p class="card-text"><%= post.content %></p>
       <p class="card-text"><small class="text-muted"><%= "#{time_ago_in_words(post.created_at)} 전" %></small></p>
+      <hr>
+      <table class="comment-table">
+        <tbody>
+          <% post.comments.each do |comment| %>
+            <tr>
+              <td class="commenter"><%=comment.user.name%></td>
+              <td class="comment"><%=comment.contents%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= form_tag comment_post_path(post), method: :post, class: 'comment-box' do %>
+        <%= text_field_tag :comment, nil, class:'form-control', placeholder: '댓글쓰기..'%>
+      <% end %>
     </div>
   </div>
 </div>
