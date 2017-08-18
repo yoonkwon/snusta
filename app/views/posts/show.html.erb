@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="row justify-content-center align-items-center">
   <div class="col-md-8 col-xs-10 col-lg-6">
     <%=image_tag @post.img_path, style:"width:100%;height:auto;"%>
@@ -7,6 +8,15 @@
         <p class="card-text"><%= @post.content %></p>
         <p class="card-text"><small class="text-muted"><%= "#{time_ago_in_words(@post.created_at)} 전" %></small></p>
       </div>
+=======
+<div class="col-12">
+  <%=image_tag @post.img_path, style:"width:100%;height:auto;"%>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-body"> <%= @post.title %></h4>
+      <p class="card-text"><%= @post.content %></p>
+      <p class="card-text"><small class="text-muted"><%= "#{time_ago_in_words(@post.created_at)} 전" %></small></p>
+>>>>>>> Stashed changes
     </div>
   </div>
 </div>

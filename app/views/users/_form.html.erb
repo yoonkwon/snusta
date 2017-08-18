@@ -19,6 +19,12 @@
     <%= form.text_field :name, class: 'form-control', placeholder: '사용자이름' %>
   </div>
 
+  <% if action_name == 'edit' %>
+    <div class="signup-field">
+      <%= form.file_field :profile_img, class: 'form-control', placeholder: '프로필사진' %>
+    </div>
+  <% end %>
+
   <div class="signup-field">
     <%= form.password_field :password, class: 'form-control', placeholder: '비밀번호' %>
   </div>

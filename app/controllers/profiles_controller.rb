@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
   end
 
   private
+
   def set_user
     @user = User.find_by(name: params[:name])
   end

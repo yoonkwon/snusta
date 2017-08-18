@@ -2,7 +2,7 @@
 <div class="row profile-top container">
   <div class="profile-top-left col-xs-6 col-sm-4 col-lg-4">
   <span>
-    <%=image_tag '이상해씨.jpg',class: 'img img-circle profile-img'%>
+    <%=image_tag @user.profile_img, class: 'img img-circle profile-img'%>
   </span>
   </div>
   <div class="profile-top-right col-xs-6 col-sm-8 col-lg-8">
@@ -26,8 +26,8 @@
 <div class="profile-body">
   <div class="row">
     <% @posts.each do |post| %>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="border:olivedrab solid 1px">
-        <%= image_tag post.img_path.url, style: 'width:100%'%>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-bottom: 10px;">
+        <%= image_tag post.img_path, style: 'width:100%'%>
       </div>
     <% end %>
   </div>
