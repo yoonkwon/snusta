@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :user_sessions, only: [:create,:destroy]
-  resources :users
+  resources :users do
+    member do
+      put :follow
+    end
+  end
   resources :posts do
     member do
       put :like

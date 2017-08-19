@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
+  has_many :followers, class_name: 'Relationship', dependent: :destroy
+  has_many :followings, class_name: 'Relationship', dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: /@/
@@ -16,6 +18,22 @@ class User < ApplicationRecord
       self.profile_img
     else
       'user.png'
+    end
+  end
+
+  def unfollow(user)
+    Relationship.where(follower: self, following: user).destroy_all
+  end
+
+  def following?(user)
+    Relationship.find_by(follower: self, following: user).present?
+  end
+
+  def follow_toggle(user)
+    if following?(user)
+      unfollow(user)
+    else
+      Relationship.create(follower: self, following: user)
     end
   end
 end

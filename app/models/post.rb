@@ -2,8 +2,8 @@ class Post < ApplicationRecord
   mount_uploader :img_path, ImgUploader
 
   belongs_to :user
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def has_like(user)
     self.likes.where(user_id: user.id).count != 0
