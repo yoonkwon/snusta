@@ -1,11 +1,9 @@
 <!--프로필 헤더 부분-->
-<div class="row profile-top container">
-  <div class="profile-top-left col-xs-6 col-sm-4 col-lg-4">
-  <span>
-    <%=image_tag @user.profile_img, class: 'img img-circle profile-img'%>
-  </span>
+<div class="row profile-top">
+  <div class="profile-top-left text-center col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <%=image_tag @user.profile_img, class: 'img-fluid rounded-circle profile-img'%>
   </div>
-  <div class="profile-top-right col-xs-6 col-sm-8 col-lg-8">
+  <div class="profile-top-right col-xs-8 col-sm-8 col-md-8 col-lg-8">
     <strong class="profile-name"><%=@user.name%></strong>
     <% if current_user == @user %>
       <%= link_to '프로필 편집', edit_user_url(@user), {class: "btn btn-default profile-edit" } %>

@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
 @import "posts";
+@import "profiles";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,16 +19,16 @@
  */
 
 body {
-  min-width: 400px;
+  //min-width: 360px;
   width: auto !important;
   position: relative;
-  height: 100%;
   margin: 0;
   background-color: #fafafa;
 }
 
 .header {
   background-color: white;
+  min-height: 56px;
 }
 
 .signup-field, .signin-field {
@@ -37,14 +38,10 @@ body {
 
 .signup {
   padding-top: 15%;
-  width: 380px;
-  height: 55%;
 }
 
 .signin {
   padding-top: 25%;
-  width: 380px;
-  height: 50%;
 }
 .signup-title {
   padding-top: 5%;
@@ -80,12 +77,6 @@ body {
   border: #e6e6e6 solid 1px;
 }
 
-.frame {
-  height: 80%;
-  width: 100%;
-  padding-bottom: 70px;
-}
-
 #error_explanation {
   text-align: left;
   color: #a94442;
@@ -103,41 +94,6 @@ body {
 
 .nav-contents {
   padding-left: 10%;
-}
-.profile-img {
-  border-radius: 50%;
-  min-width: 150px;
-  max-width: 200px;
-}
-
-.profile-top{
-  margin-top: 5%;
-  margin-bottom: 5%;
-  min-width: 700px;
-}
-
-.profile-text{
-  margin-right: 5%;
-}
-
-.profile-name{
-  font-size: 2rem;
-  margin-right: 3%;
-}
-
-.profile-edit{
-  background-color: white;
-  border: solid 1px #dbdbdb;
-  font-size: 1rem;
-  margin-bottom: 2%;
-}
-
-.profile-top-right{
-  padding-top: 5%;
-}
-
-.profile-right {
-  font-size: 1.5rem;
 }
 
 .posting-icon{

@@ -1,0 +1,44 @@
+.profile-body{
+  padding-bottom:70px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  min-width: 77px;
+  max-width: 152px;
+  width: 100%;
+}
+
+.profile-top{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  //min-width: 300px;
+}
+
+.profile-text{
+  margin-right: 5%;
+}
+
+.profile-name{
+  font-size: 1.25rem;
+  margin-right: 3%;
+}
+
+.profile-edit{
+  background-color: white;
+  border: solid 1px #dbdbdb;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+.profile-top-left{
+  padding: 20px;
+}
+
+.profile-top-right{
+  padding-top: 5%;
+}
+
+.profile-right {
+  font-size: 1rem;
+}
