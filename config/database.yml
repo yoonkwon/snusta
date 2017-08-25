@@ -27,4 +27,7 @@ test:
 
 production:
   <<: *default
+  username: snusta
+  password: snusta1234
+  host: snusta.cm3dvfsf3pyq.ap-northeast-2.rds.amazonaws.com
   database: snusta_production
