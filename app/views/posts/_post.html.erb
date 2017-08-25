@@ -7,28 +7,13 @@
     <%=image_tag post.img_path, class: 'card-img-top', style:'width:100%;height:auto;'%>
     <div class="card-body">
       <div class="card-text" style="padding-bottom:1rem">
-        <%= link_to like_post_path(post), class: 'card-text btn-heart', id: "like-#{post.id}", method: :put, remote: true do %>
-          <% if post.has_like(current_user)%>
-              <i class="fa fa-heart fa-2x" style="color:red"></i>
-          <% else %>
-              <i class="fa fa-heart-o fa-2x"></i>
-          <% end %>
-        <% end %>
+        <%= render partial: 'like.html.erb', locals:{post: post}%>
       </div>
       <h4 class="card-text"> <%= post.title %></h4>
       <p class="card-text"><%= post.content %></p>
       <p class="card-text"><small class="text-muted"><%= "#{time_ago_in_words(post.created_at)} 전" %></small></p>
       <hr>
-      <table class="comment-table" id="comments-<%=post.id%>">
-        <tbody>
-          <% post.comments.each do |comment| %>
-            <tr>
-              <td class="commenter"><%=comment.user.name%></td>
-              <td class="comment"><%=comment.contents%></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <%= render partial: 'comment.html.erb', locals:{post: post}%>
       <%= form_tag comment_post_path(post), method: :post, class: 'comment-box', remote: true do %>
         <%= text_field_tag :comment, nil, class:'form-control', placeholder: '댓글쓰기..'%>
       <% end %>
