@@ -21,4 +21,5 @@
 /yarn-error.log
 
 .byebug_history
-public/postings/*
+public/post/*
+public/user/*
