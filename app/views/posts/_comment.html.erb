@@ -1,0 +1,10 @@
+<table class="comment-table" id="comments-<%=post.id%>">
+  <tbody>
+    <% post.comments.each do |comment| %>
+      <tr>
+        <td class="commenter"><%=comment.user.name%></td>
+        <td class="comment"><%=comment.contents%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
