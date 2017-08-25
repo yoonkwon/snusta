@@ -27,7 +27,8 @@ test:
 
 production:
   <<: *default
-  username: snusta
-  password: snusta1234
-  host: snusta.cm3dvfsf3pyq.ap-northeast-2.rds.amazonaws.com
-  database: snusta_production
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
