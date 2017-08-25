@@ -24,13 +24,15 @@ class PostsController < ApplicationController
 
   def like
     @post.like_toggle(current_user)
-    redirect_back_or_to post_path(@post)
+    # redirect_back_or_to post_path(@post)
+    render partial: 'like.js', layout: false, locals:{post: @post}
   end
 
   def comment
     contents = params[:comment]
     @post.add_comment current_user, contents
-    redirect_back_or_to post_path(@post)
+    # redirect_back_or_to post_path(@post)
+    render partial: 'comment.js', layout: false, locals:{post: @post}
   end
 
   # POST /posts

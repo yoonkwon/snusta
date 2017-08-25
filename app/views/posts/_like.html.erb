@@ -1,0 +1,7 @@
+<%= link_to like_post_path(post), class: 'card-text btn-heart', id: "like-#{post.id}", method: :put, remote: true do %>
+  <% if post.has_like(current_user)%>
+      <i class="fa fa-heart fa-2x" style="color:red"></i>
+  <% else %>
+      <i class="fa fa-heart-o fa-2x"></i>
+  <% end %>
+<% end %>
