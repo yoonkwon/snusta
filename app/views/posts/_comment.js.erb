@@ -1,1 +1,2 @@
 $("#comments-<%=post.id%>").html("<%= j render(partial: 'comment.html.erb', locals:{post: post})%>")
+$("#comment-<%=post.id%>").val("")

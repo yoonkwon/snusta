@@ -15,7 +15,7 @@
       <hr>
       <%= render partial: 'comment.html.erb', locals:{post: post}%>
       <%= form_tag comment_post_path(post), method: :post, class: 'comment-box', remote: true do %>
-        <%= text_field_tag :comment, nil, class:'form-control', placeholder: '댓글쓰기..'%>
+        <%= text_field_tag :comment, nil, class:'form-control', id: "comment-#{post.id}", placeholder: '댓글쓰기..'%>
       <% end %>
     </div>
   </div>
